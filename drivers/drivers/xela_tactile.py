@@ -25,7 +25,6 @@ for _ in range(num_samples):
 samples.append(self.read_frame())
 self.baseline = np.mean(samples, axis=0)
 return self.baseline
-23
 def get_pressure(self):
 """Compute pressure from capacitance change"""
 current = self.read_frame()
