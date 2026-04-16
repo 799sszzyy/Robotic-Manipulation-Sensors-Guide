@@ -1,0 +1,23 @@
+launch:
+- node:
+pkg: "realsense2_camera"
+exec: "realsense2_camera_node"
+name: "camera"
+params:
+enable_depth: true
+enable_color: true
+depth_module.profile: "1280x720x30"
+- node:
+pkg: "ati_sensor"
+exec: "ft_sensor_node"
+name: "ft_sensor"
+params:
+ip_address: "192.168.1.1"
+calibration_file: "calib.yml"
+- node:
+pkg: "tactile_driver"
+exec: "xela_node"
+name: "tactile"
+params:
+i2c_bus: 1
+taxel_count: 16
